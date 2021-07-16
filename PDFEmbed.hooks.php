@@ -101,7 +101,7 @@ class PDFEmbed {
 				'width' => $width,
 				'height' => $height,
 				'src' => $file->getFullUrl().'#page='.$page,
-				'style' => 'max-width: 100%;'
+				'style' => 'max-width: 100%;',
 				'loading' => 'lazy',
 			]
 		);
