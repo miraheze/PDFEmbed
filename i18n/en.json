@@ -1,7 +1,10 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Universal Omega"
+		]
 	},
+	"action-embed_pdf": "embed PDFs",
 	"pdfembed": "PDF Embed",
 	"pdfembed_description": "Media handler extension for PDF files.",
 	"embed_pdf_no_permission": "You do not have permission to embed PDF files.",
