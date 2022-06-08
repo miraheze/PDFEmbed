@@ -1,6 +1,6 @@
 <?php
 
-class PDFEmbed {
+class PDFEmbedHooks {
 	/**
 	 * Sets up this extensions parser functions.
 	 *
