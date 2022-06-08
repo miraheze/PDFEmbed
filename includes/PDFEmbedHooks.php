@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class PDFEmbedHooks {
 	/**
 	 * Sets up this extensions parser functions.
@@ -30,10 +32,13 @@ class PDFEmbedHooks {
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
 
+		$services = MediaWikiServices::getInstance();
 		if ( $request->getVal( 'action' ) == 'edit' || $request->getVal( 'action' ) == 'submit' ) {
 			$user = $context->getUser();
 		} else {
-			$user = User::newFromName( $parser->getRevisionUser() );
+			$user = $services->getUserFactory()->newFromName(
+				$parser->getRevisionUser() ?? 'Unknown user'
+			);
 		}
 
 		if ( !$user ) {
@@ -48,8 +53,8 @@ class PDFEmbedHooks {
 			return self::error( 'embed_pdf_blank_file' );
 		}
 
-		$file = wfFindFile( Title::newFromText( $file ) );
-
+		$title = $services->getTitleFactory()->newFromText( $file );
+		$file = $services->getRepoGroup()->findFile( $title );
 		if ( array_key_exists( 'width', $args ) ) {
 			$width = intval( $parser->recursiveTagParse( $args['width'], $frame ) );
 		} else {
@@ -81,7 +86,7 @@ class PDFEmbedHooks {
 	 * @param File $file
 	 * @param int $width Width of the object.
 	 * @param int $height Height of the object.
-	 * @param string $page
+	 * @param int $page
 	 * @return string HTML object.
 	 */
 	private static function embed( File $file, $width, $height, $page ) {
@@ -104,6 +109,6 @@ class PDFEmbedHooks {
 	 * @return string HTML error message.
 	 */
 	private static function error( $messageKey ) {
-		return Xml::span( wfMessage( $messageKey )->parse(), 'error' );
+		return Html::errorBox( wfMessage( $messageKey )->escaped() );
 	}
 }
