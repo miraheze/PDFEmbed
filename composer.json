@@ -1,7 +1,7 @@
 {
 	"name": "miraheze/pdfembed",
 	"description": "",
-	"license": "GPL-3.0-or-later",
+	"license": "LGPL-3.0-only",
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "39.0.0",
 		"mediawiki/mediawiki-phan-config": "0.11.1",
