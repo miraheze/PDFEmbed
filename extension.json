@@ -23,8 +23,7 @@
 		]
 	},
 	"AutoloadClasses": {
-		"PDFEmbed": "PDFEmbed.hooks.php",
-		"PDFHandler": "classes/PDFHandler.class.php"
+		"PDFEmbed": "PDFEmbed.hooks.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "PDFEmbed::onParserFirstCallInit"
