@@ -54,6 +54,10 @@ class PDFEmbedHooks {
 		}
 
 		$title = $services->getTitleFactory()->newFromText( $file );
+		if ( !$title ) {
+			return self::error( 'embed_pdf_blank_file' );
+		}
+
 		$file = $services->getRepoGroup()->findFile( $title );
 		if ( array_key_exists( 'width', $args ) ) {
 			$width = intval( $parser->recursiveTagParse( $args['width'], $frame ) );
