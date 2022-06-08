@@ -1,7 +1,10 @@
 {
 	"name": "PDFEmbed",
-	"version": "2.0.2",
-	"author": "Alexia E. Smith",
+	"version": "2.0.3",
+	"author": [
+		"Alexia E. Smith",
+		"Universal Omega"
+	],
 	"url": "https://www.mediawiki.org/wiki/Extension:PDFEmbed",
 	"descriptionmsg": "pdfembed_description",
 	"license-name": "LGPL-3.0-only",
@@ -23,10 +26,10 @@
 		]
 	},
 	"AutoloadClasses": {
-		"PDFEmbed": "PDFEmbed.hooks.php"
+		"PDFEmbedHooks": "includes/PDFEmbedHooks.php"
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "PDFEmbed::onParserFirstCallInit"
+		"ParserFirstCallInit": "PDFEmbedHooks::onParserFirstCallInit"
 	},
 	"FileExtensions": [
 		"pdf"
