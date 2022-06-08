@@ -20,7 +20,7 @@ class PDFEmbedHooks {
 	 * @return string HTML
 	 */
 	public static function generateTag( $file, $args, Parser $parser, PPFrame $frame ) {
-		global $wgPdfEmbed, $wgRequest;
+		global $wgPdfEmbed;
 		$parser->getOutput()->updateCacheExpiry( 0 );
 
 		if ( strstr( $file, '{{{' ) !== false ) {
