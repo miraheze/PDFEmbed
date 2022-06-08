@@ -8,7 +8,7 @@
  * @package		PDFEmbed
  * @link		http://www.mediawiki.org/wiki/Extension:PDFEmbed
  *
- **/
+ */
 
 class PDFEmbed {
 	/**
@@ -29,73 +29,73 @@ class PDFEmbed {
 	 * @param object PPFrame object.
 	 * @return string HTML
 	 */
-	static public function generateTag( $file, $args, Parser $parser, PPFrame $frame ) {
+	public static function generateTag( $file, $args, Parser $parser, PPFrame $frame ) {
 		global $wgPdfEmbed, $wgRequest;
 		$parser->getOutput()->updateCacheExpiry( 0 );
 
-		if (strstr($file, '{{{') !== false) {
-			$file = $parser->recursiveTagParse($file, $frame);
+		if ( strstr( $file, '{{{' ) !== false ) {
+			$file = $parser->recursiveTagParse( $file, $frame );
 		}
 
-		if ( $wgRequest->getVal('action') == 'edit' || $wgRequest->getVal( 'action' ) == 'submit' ) {
+		if ( $wgRequest->getVal( 'action' ) == 'edit' || $wgRequest->getVal( 'action' ) == 'submit' ) {
 			$user = RequestContext::getMain()->getUser();
 		} else {
 			$user = User::newFromName( $parser->getRevisionUser() );
 		}
 
-		if ($user === false) {
+		if ( $user === false ) {
 			return self::error( 'embed_pdf_invalid_user' );
 		}
 
-		if (!$user->isAllowed('embed_pdf')) {
-			return self::error('embed_pdf_no_permission');
+		if ( !$user->isAllowed( 'embed_pdf' ) ) {
+			return self::error( 'embed_pdf_no_permission' );
 		}
 
-		if (empty($file) || !preg_match('#(.+?)\.pdf#is', $file)) {
-			return self::error('embed_pdf_blank_file');
+		if ( empty( $file ) || !preg_match( '#(.+?)\.pdf#is', $file ) ) {
+			return self::error( 'embed_pdf_blank_file' );
 		}
 
-		$file = wfFindFile(Title::newFromText($file));
+		$file = wfFindFile( Title::newFromText( $file ) );
 
-		if (array_key_exists('width', $args)) {
-			$width = intval($parser->recursiveTagParse($args['width'], $frame));
+		if ( array_key_exists( 'width', $args ) ) {
+			$width = intval( $parser->recursiveTagParse( $args['width'], $frame ) );
 		} else {
-			$width = intval($wgPdfEmbed['width']);
+			$width = intval( $wgPdfEmbed['width'] );
 		}
-		if (array_key_exists('height', $args)) {
-			$height = intval($parser->recursiveTagParse($args['height'], $frame));
+		if ( array_key_exists( 'height', $args ) ) {
+			$height = intval( $parser->recursiveTagParse( $args['height'], $frame ) );
 		} else {
-			$height = intval($wgPdfEmbed['height']);
+			$height = intval( $wgPdfEmbed['height'] );
 		}
-		if (array_key_exists('page', $args)) {
-			$page = intval($parser->recursiveTagParse($args['page'], $frame));
+		if ( array_key_exists( 'page', $args ) ) {
+			$page = intval( $parser->recursiveTagParse( $args['page'], $frame ) );
 		} else {
 			$page = 1;
 		}
 
-		if ($file !== false) {
-			return self::embed($file, $width, $height, $page);
+		if ( $file !== false ) {
+			return self::embed( $file, $width, $height, $page );
 		} else {
-			return self::error('embed_pdf_invalid_file');
+			return self::error( 'embed_pdf_invalid_file' );
 		}
 	}
 
 	/**
 	 * Returns a HTML object as string.
 	 *
-	 * @access	private
+	 * @private
 	 * @param	object	File object.
 	 * @param	integer	Width of the object.
 	 * @param	integer	Height of the object.
-	 * @return	string	HTML object.
+	 * @return string HTML object.
 	 */
-	static private function embed(File $file, $width, $height, $page) {
+	private static function embed( File $file, $width, $height, $page ) {
 		return Html::rawElement(
 			'iframe',
 			[
 				'width' => $width,
 				'height' => $height,
-				'src' => $file->getFullUrl().'#page='.$page,
+				'src' => $file->getFullUrl() . '#page=' . $page,
 				'style' => 'max-width: 100%;',
 				'loading' => 'lazy',
 			]
@@ -105,11 +105,11 @@ class PDFEmbed {
 	/**
 	 * Returns a standard error message.
 	 *
-	 * @access	private
+	 * @private
 	 * @param	string	Error message key to display.
-	 * @return	string	HTML error message.
+	 * @return string HTML error message.
 	 */
-	static private function error($messageKey) {
-		return Xml::span(wfMessage($messageKey)->plain(), 'error');
+	private static function error( $messageKey ) {
+		return Xml::span( wfMessage( $messageKey )->plain(), 'error' );
 	}
 }
