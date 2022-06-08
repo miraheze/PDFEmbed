@@ -14,42 +14,37 @@ class PDFEmbed {
 	/**
 	 * Sets up this extensions parser functions.
 	 *
-	 * @access	public
-	 * @param	object	Parser object passed as a reference.
-	 * @return	boolean	true
+	 * @param Parser $parser
 	 */
-	static public function onParserFirstCallInit(Parser &$parser) {
-		$parser->setHook('pdf', 'PDFEmbed::generateTag');
-
-		return true;
+	public static function onParserFirstCallInit( Parser $parser ) {
+		$parser->setHook( 'pdf', [ __CLASS__, 'generateTag' ] );
 	}
 
 	/**
 	 * Generates the PDF object tag.
 	 *
-	 * @access	public
-	 * @param	string	Namespace prefixed article of the PDF file to display.
-	 * @param	array	Arguments on the tag.
-	 * @param	object	Parser object.
-	 * @param	object	PPFrame object.
-	 * @return	string	HTML
+	 * @param string Namespace prefixed article of the PDF file to display.
+	 * @param array	Arguments on the tag.
+	 * @param object Parser object.
+	 * @param object PPFrame object.
+	 * @return string HTML
 	 */
-	static public function generateTag($file, $args = [], Parser $parser, PPFrame $frame) {
-		global $wgPdfEmbed, $wgRequest, $wgUser;
+	static public function generateTag( $file, $args, Parser $parser, PPFrame $frame ) {
+		global $wgPdfEmbed, $wgRequest;
 		$parser->getOutput()->updateCacheExpiry( 0 );
 
 		if (strstr($file, '{{{') !== false) {
 			$file = $parser->recursiveTagParse($file, $frame);
 		}
 
-		if ($wgRequest->getVal('action') == 'edit' || $wgRequest->getVal('action') == 'submit') {
-			$user = $wgUser;
+		if ( $wgRequest->getVal('action') == 'edit' || $wgRequest->getVal( 'action' ) == 'submit' ) {
+			$user = RequestContext::getMain()->getUser();
 		} else {
-			$user = User::newFromName($parser->getRevisionUser());
+			$user = User::newFromName( $parser->getRevisionUser() );
 		}
 
 		if ($user === false) {
-			return self::error('embed_pdf_invalid_user');
+			return self::error( 'embed_pdf_invalid_user' );
 		}
 
 		if (!$user->isAllowed('embed_pdf')) {
