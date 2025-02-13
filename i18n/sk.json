@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"TreeIsLife"
+		]
+	},
+	"action-embed_pdf": "Vložte PDF súbory",
+	"pdfembed_description": "Rozšírenie pre podporu súborov PDF.",
+	"embed_pdf_no_permission": "Nemáte oprávnenie vkladať PDF súbory.",
+	"embed_pdf_blank_file": "Adresa alebo cesta k súboru zadaná na vloženie PDF je prázdna.",
+	"embed_pdf_invalid_file": "Zadaná adresa alebo cesta k súboru neexistuje.",
+	"embed_pdf_invalid_user": "Bol určený neplatný používateľ na testovanie povolení na vloženie tohto PDF súbora.",
+	"right-embed_pdf": "Vkladanie PDF súborov do stránok"
+}
