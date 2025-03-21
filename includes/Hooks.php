@@ -1,12 +1,15 @@
 <?php
 
+namespace Miraheze\PDFEmbed;
+
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\PPFrame;
 
-class PDFEmbedHooks {
+class Hooks {
+
 	/**
 	 * Sets up this extensions parser functions.
 	 *
