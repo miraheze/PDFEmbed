@@ -1,6 +1,6 @@
 {
 	"name": "PDFEmbed",
-	"version": "2.0.3",
+	"version": "2.1.0",
 	"author": [
 		"Alexia E. Smith",
 		"Universal Omega"
@@ -25,18 +25,19 @@
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"PDFEmbedHooks": "includes/PDFEmbedHooks.php"
+	"AutoloadNamespaces": {
+		"Miraheze\\PDFEmbed\\": "includes/"
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "PDFEmbedHooks::onParserFirstCallInit"
+		"ParserFirstCallInit": [
+			"Miraheze\\PDFEmbed\\Hooks::onParserFirstCallInit"
+		]
 	},
 	"FileExtensions": [
 		"pdf"
 	],
 	"config": {
 		"PdfEmbed":{
-			"public": true,
 			"value": {
 				"width": 800,
 				"height": 1090
