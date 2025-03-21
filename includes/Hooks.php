@@ -2,6 +2,7 @@
 
 namespace Miraheze\PDFEmbed;
 
+use File;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
@@ -101,7 +102,7 @@ class Hooks {
 	 * @return string HTML object.
 	 */
 	private static function embed( File $file, $width, $height, $page ) {
-		return Html::rawElement(
+		return Html::element(
 			'iframe',
 			[
 				'width' => $width,
