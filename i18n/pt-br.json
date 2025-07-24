@@ -1,13 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduaddad"
+			"Eduaddad",
+			"Eduardoaddad"
 		]
 	},
+	"action-embed_pdf": "incorporar PDFs",
 	"pdfembed": "PDF incorporado",
 	"pdfembed_description": "Extensão do manipulador de mídia para arquivos PDF.",
 	"embed_pdf_no_permission": "Você não tem permissão para incorporar arquivos PDF.",
 	"embed_pdf_blank_file": "O URL ou o caminho do arquivo fornecido para incorporar um PDF está em branco.",
 	"embed_pdf_invalid_file": "A URL ou o caminho do arquivo fornecido não existe.",
-	"embed_pdf_invalid_user": "Um usuário inválido foi especificado para permitir o teste para incorporar este PDF."
+	"embed_pdf_invalid_user": "Um usuário inválido foi especificado para permitir o teste para incorporar este PDF.",
+	"right-embed_pdf": "Incorporar PDFs em páginas"
 }
