@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"action-embed_pdf": "incrustar un PDF",
+	"pdfembed_description": "Extensión do xestor multimedia para ficheiros PDF.",
+	"embed_pdf_no_permission": "Non tes os permisos necesarios para incrustar ficheiros PDF.",
+	"embed_pdf_blank_file": "O enderezo URL ou a ruta do ficheiro proporcionada para incrustar un PDF está en branco.",
+	"embed_pdf_invalid_file": "O enderezo URL ou a ruta do ficheiro proporcionada non existe.",
+	"embed_pdf_invalid_user": "Especificouse un usuario non válido para as probas de permisos para inserir este PDF.",
+	"right-embed_pdf": "Incrustar ficheiros PDF en páxinas"
+}
