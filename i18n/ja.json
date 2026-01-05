@@ -4,11 +4,12 @@
 			"Buehl",
 			"M1660661",
 			"Mugenpman",
+			"Shirayuki",
 			"春春眠眠",
 			"背番号4のエース"
 		]
 	},
-	"action-embed_pdf": "PDFを埋め込む",
+	"action-embed_pdf": "PDF の埋め込み",
 	"pdfembed_description": "PDF ファイル用のメディア ハンドラー拡張機能。",
 	"embed_pdf_no_permission": "PDFファイルを埋め込む権限がありません。",
 	"embed_pdf_blank_file": "PDF を埋め込むために指定されたURLまたはファイルパスが空白です。",
