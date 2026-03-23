@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Vlad5250",
 			"Winston Sung"
 		]
@@ -11,6 +12,6 @@
 	"embed_pdf_no_permission": "Nemate dopuštenje za ugradnju PDF datoteka.",
 	"embed_pdf_blank_file": "URL ili putanja datoteke zadana za ugradnju PDF-a je prazna.",
 	"embed_pdf_invalid_file": "Navedeni URL ili putanja datoteke ne postoji.",
-	"embed_pdf_invalid_user": "Naveden je nevažeći korisnik.",
+	"embed_pdf_invalid_user": "Naveden je neispravan korisnik.",
 	"right-embed_pdf": "Ugrađivanje PDF-ova u stranice"
 }
