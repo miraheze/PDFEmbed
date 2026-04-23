@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
 	"action-embed_pdf": "PDF를 포함할",
+	"pdfembed": "PDF 포함됨",
 	"pdfembed_description": "PDF 파일을 위한 미디어 핸들러 확장 기능입니다.",
 	"embed_pdf_no_permission": "PDF 파일을 포함할 권한이 없습니다.",
 	"embed_pdf_blank_file": "PDF를 포함하기 위해 지정된 URL 또는 파일 경로가 비어 있습니다.",
