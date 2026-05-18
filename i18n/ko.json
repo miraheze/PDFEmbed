@@ -5,12 +5,12 @@
 			"Ykhwong"
 		]
 	},
-	"action-embed_pdf": "PDF를 포함할",
+	"action-embed_pdf": "PDF를 포함",
 	"pdfembed": "PDF 포함됨",
 	"pdfembed_description": "PDF 파일을 위한 미디어 핸들러 확장 기능입니다.",
 	"embed_pdf_no_permission": "PDF 파일을 포함할 권한이 없습니다.",
 	"embed_pdf_blank_file": "PDF를 포함하기 위해 지정된 URL 또는 파일 경로가 비어 있습니다.",
 	"embed_pdf_invalid_file": "지정된 URL 또는 파일 경로가 존재하지 않습니다.",
 	"embed_pdf_invalid_user": "이 PDF를 포함하기 위한 권한 테스트에 유효하지 않은 사용자가 지정되었습니다.",
-	"right-embed_pdf": "PDF를 페이지에 포함"
+	"right-embed_pdf": "PDF를 문서에 포함"
 }
