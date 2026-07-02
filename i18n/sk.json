@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"TreeIsLife"
+			"TreeIsLife",
+			"Wizzard"
 		]
 	},
 	"action-embed_pdf": "Vložte PDF súbory",
+	"pdfembed": "Vkladanie PDF",
 	"pdfembed_description": "Rozšírenie pre podporu súborov PDF.",
 	"embed_pdf_no_permission": "Nemáte oprávnenie vkladať PDF súbory.",
 	"embed_pdf_blank_file": "Adresa alebo cesta k súboru zadaná na vloženie PDF je prázdna.",
