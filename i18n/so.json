@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"action-embed_pdf": "Ku dhex dar PDF-yada",
+	"pdfembed_description": "Kordhinta maareeyaha warbaahinta ee faylasha PDF",
+	"embed_pdf_no_permission": "Ma lihid oggolaanshaha aad ku dhex dari karto faylasha PDF.",
+	"embed_pdf_blank_file": "URL-ka ama jidka faylka loo bixiyey in PDF lagu dhex daro waa bannaan yahay.",
+	"embed_pdf_invalid_file": "URL-ka ama jidka faylka la bixiyey ma jiro.",
+	"embed_pdf_invalid_user": "URL-ka ama jidka faylka la bixiyey ma jiro.",
+	"right-embed_pdf": "Ku dhex dar PDF-yada bogagga"
+}
