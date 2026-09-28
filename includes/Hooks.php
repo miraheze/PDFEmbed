@@ -31,7 +31,8 @@ class Hooks {
 	 */
 	public static function generateTag( $file, $args, Parser $parser, PPFrame $frame ) {
 		global $wgPdfEmbed;
-		$parser->getOutput()->updateCacheExpiry( 0 );
+		// @phan-suppress-next-line PhanDeprecatedFunction $source is passed, only the sourceless call is deprecated
+		$parser->getOutput()->updateCacheExpiry( 0, 'generateTag' );
 
 		if ( strstr( $file, '{{{' ) !== false ) {
 			$file = $parser->recursiveTagParse( $file, $frame );
